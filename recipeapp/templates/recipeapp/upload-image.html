@@ -2,8 +2,8 @@
 {% block title %}Recipe №_{{ recipe.id }}{% endblock %}
 {% block content %}
 {% load static %}
-<h2>Добавить изображение товара <b>{{ recipe.name }}</h2>
-</b>
+<h2>Добавить изображение товара <b>{{ recipe.name }}</b></h2>
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
