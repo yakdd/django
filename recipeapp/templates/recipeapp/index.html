@@ -1,0 +1,19 @@
+{% extends 'recipeapp/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+{% load static %}
+<h2>{{ count }} random recipes:</h2>
+<div class="page page-content">
+    {% for recipe in recipes %}
+    <div class="recipe-card">
+        <h4>{{ forloop.counter }}. {{ recipe.name }} /{{ recipe.category }}/</h4>
+        <ul>
+            <li><b>Description:</b> {{ recipe.description }}</li>
+            <li><b>Time:</b> {{ recipe.cooking_time }}</li>
+            <li><b>Author:</b> {{ recipe.author }}</li>
+            <li><a href="{% url 'recipe' recipe.id %}">Details</a></li>
+        </ul>
+    </div><br>
+    {% endfor %}
+</div>
+{% endblock %}

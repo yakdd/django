@@ -1,0 +1,17 @@
+{% extends 'recipeapp/base.html' %}
+{% block title %}About {{ user.username }}{% endblock %}
+{% block content %}
+<h2>User profile "{{ user.username }}"</h2>
+<br>
+{% if user.is_authenticated %}
+<h3>Details:</h3>
+<ul>
+    <li>Пользователь: {{ user.username }}</li>
+    <li>Имя: {{ user.firstname }}</li>
+    <li>Фамилия: {{ user.lastname }}</li>
+    <li>E-mail: {{ user.email }}</li>
+</ul>
+{% else %}
+<h3>Anonimous</h3>
+{% endif %}
+{% endblock %}

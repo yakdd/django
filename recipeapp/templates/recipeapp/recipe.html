@@ -1,0 +1,30 @@
+{% extends 'recipeapp/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+{% load static %}
+<h2>{{ recipe.name }} details:</h2>
+<div class="page">
+    <div class="rercipe-details">
+        <ul>
+            {% for img in images %}
+            <li class="rercipe-details-item"><img class="img" src="{{ img.image.url }}" width="500"></li>
+            {% endfor %}
+        </ul>
+        <ul>
+            <li class="rercipe-details-item"><b>Category</b>: {{ recipe.category }}</li>
+            <li class="rercipe-details-item"><b>Description:</b> {{ recipe.description }}</li>
+            <li class="rercipe-details-item"><b>Steps:</b>
+                <ol>
+                    {% for step in steps %}
+                    <li>{{ step }}</li>
+                    {% endfor %}
+                </ol>
+            </li class="rercipe-details-item">
+
+            <li class="rercipe-details-item"><b>Time:</b> {{ recipe.cooking_time }}</li>
+            <li class="rercipe-details-item"><b>Author:</b> {{ recipe.author }}</li>
+        </ul>
+        <a class="action-button" href="{% url 'edit_recipe' recipe.id %}">Изменить рецепт</a>
+    </div>
+</div><br>
+{% endblock %}

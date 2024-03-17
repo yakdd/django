@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Recipes collection{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'recipeapp/css/style.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container container-header">
+                <h1>Recipes Collection</h1>
+                <nav class="nav">
+                    <nav class="nav-left">
+                        <ul class="menu-items">
+                            <li><a class="menu-item" href="{% url 'index' %}">HOME</a></li>
+                            <li><a class="menu-item" href="{% url 'recipes' %}">ALL RECIPES</a></li>
+                            <li><a class="menu-item" href="{% url 'add_recipe' %}">ADD RECIPE</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="nav-right">
+                        <ul class="menu-items">
+                            {% if user.is_authenticated %}
+                            <li><a class="menu-item" href="{% url 'about_user' %}">PROFILE</a></li>
+                            <li><a class="menu-item" href="{% url 'logout' %}">LOGOUT</a></li>
+                            {% else %}
+                            <li><a class="menu-item" href="{% url 'registration' %}">SIGN UP</a></li>
+                            <li><a class="menu-item" href="{% url 'login' %}">LOGIN</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container container-main">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+    </div>
+
+    </main>
+    <footer class="footer">
+        <div class="container container-footer">
+            <p>Web development on Python. Django.</p>
+            <p>Yakovlev Denis. yakdd@yandex.ru</p>
+        </div>
+    </footer>
+    </div>
+</body>
+
+</html>

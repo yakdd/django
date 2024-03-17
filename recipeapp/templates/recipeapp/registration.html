@@ -1,0 +1,14 @@
+{% extends 'recipeapp/base.html' %}
+{% block title %}Sign up{% endblock %}
+{% block content %}
+{% load static %}
+<h2>Registration:</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.username }} Имя<br>
+    {{ form.password1 }} Пароль<br>
+    {{ form.password2 }} Подтверите пароль<br>
+    <button type="submit" class="submit-button">Sigh Up</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'recipeapp/base.html' %}
+{% block title %}Recipe №_{{ recipe.id }}{% endblock %}
+{% block content %}
+{% load static %}
+<h2>Добавить изображение товара <b>{{ recipe.name }}</h2>
+</b>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="submit-button">Загрузить</button>
+</form>
+{% endblock %}

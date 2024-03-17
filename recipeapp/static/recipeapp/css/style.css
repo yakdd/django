@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: #555;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(19, 161, 0);
+}
+
+h1 {
+    color: #ffa600;
+    text-align: center;
+    font-size: 50px;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    background-color: rgb(19, 161, 0);
+    border-bottom: 2px solid #ffa600;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container-header {
+    padding: 21px 0 21px 0;
+}
+
+
+.nav,
+.container-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    margin-top: 30px;
+}
+
+.menu-items,
+.footer-memu-items {
+    display: flex;
+}
+
+.menu-item {
+    margin-right: 50px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.menu-item:hover {
+    color: #ffa600;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.container-main {
+    margin-top: 80px;
+}
+
+.page-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+    margin: 25px 0 25px 0;
+}
+
+.recipe-card {
+    margin: 0;
+    width: 400px;
+    padding: 25px 30px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+
+.rercipe-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.img {
+    padding: 7px;
+    border: rgb(19, 161, 0) solid 1px;
+    background-color: #ffecca;
+}
+
+.rercipe-details-item {
+    margin-top: 20px;
+}
+
+.action-button,
+.submit-button {
+    margin: 25px 0 25px 0;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(19, 161, 0);
+}
+
+.submit-button {
+    font-size: 26px;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+.action-button:hover,
+.submit-button:hover {
+    color: #ffa600;
+}
+
+.add-image {
+    height: 0;
+    width: 0;
+}
+
+form {
+    margin: 25px 0 50px 0;
+    padding: 25px 30px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+}
+
+input,
+select,
+textarea {
+    margin: 10px 0 10px 0;
+    padding-left: 10px;
+    height: 50px;
+    min-width: 300px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #fff;
+}
+
+textarea {
+    height: 250px;
+    min-width: 400px;
+}
+
+/* ----------------------------- */
+.footer,
+.footer-menu-item {
+    color: #fff;
+    background-color: black;
+}
+
+.container-footer {
+    padding: 21px 0 21px 0;
+}

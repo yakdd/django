@@ -1,0 +1,17 @@
+{% extends 'recipeapp/base.html' %}
+{% block title %}Add new recipe{% endblock %}
+{% block content %}
+{% load static %}
+<h2>Add new recipe:</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.author }} - Автор<br>
+    {{ form.name }} - Название<br>
+    {{ form.category }} - Категория<br>
+    {{ form.description }} - Описание<br>
+    {{ form.steps }} - Этапы приготовления<br>
+    {{ form.cooking_time }} - Время приготовления<br>
+    <button type="submit" class="submit-button">Добавить</button>
+</form>
+
+{% endblock %}
