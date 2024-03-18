@@ -44,6 +44,12 @@ ul {
     border-bottom: 2px solid #ffa600;
 }
 
+.header,
+.main,
+.footer {
+    padding: 0 15px;
+}
+
 .container {
     max-width: 1024px;
     margin: 0 auto;
@@ -52,7 +58,6 @@ ul {
 .container-header {
     padding: 21px 0 21px 0;
 }
-
 
 .nav,
 .container-footer {
@@ -63,15 +68,17 @@ ul {
 
 .nav {
     margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .menu-items,
 .footer-memu-items {
     display: flex;
+    gap: 30px;
 }
 
 .menu-item {
-    margin-right: 50px;
     color: #fff;
     font-weight: 600;
 }
@@ -89,19 +96,18 @@ ul {
 }
 
 .page-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin: 25px 0 25px 0;
 }
 
 .recipe-card {
     margin: 0;
-    width: 400px;
     padding: 25px 30px;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     border-radius: 10px;
+    box-shadow: 0 0 20px 3px rgba(190, 190, 190, 0.25);
 }
 
 .rercipe-details {
@@ -137,7 +143,6 @@ ul {
     cursor: pointer;
 }
 
-
 .action-button:hover,
 .submit-button:hover {
     color: #ffa600;
@@ -151,25 +156,24 @@ ul {
 form {
     margin: 25px 0 50px 0;
     padding: 25px 30px;
-    background-color: #f3f3f3;
     border-radius: 10px;
+    box-shadow: 0 0 20px 5px rgba(175, 175, 175, 0.25);
 }
 
 input,
 select,
 textarea {
-    margin: 10px 0 10px 0;
+    margin: 10px auto;
     padding-left: 10px;
     height: 50px;
-    min-width: 300px;
+    min-width: 400px;
     border-radius: 10px;
     border: 0px;
-    background-color: #fff;
+    background-color: rgba(175, 175, 175, 0.25);
 }
 
 textarea {
     height: 250px;
-    min-width: 400px;
 }
 
 /* ----------------------------- */
@@ -181,4 +185,53 @@ textarea {
 
 .container-footer {
     padding: 21px 0 21px 0;
+}
+
+/* ====================================================== */
+
+@media screen and (max-width: 767px) {
+
+    .img {
+        max-width: 95%;
+    }
+
+    .nav {
+        font-size: 15px;
+    }
+
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin: 25px 0 25px 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input,
+    select,
+    textarea {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 531px) {
+    .nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer {
+        font-size: 17px;
+    }
 }
